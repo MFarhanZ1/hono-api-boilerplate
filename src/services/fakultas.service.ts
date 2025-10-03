@@ -6,7 +6,7 @@ export default class FakultasService {
 	public static async getAll() {
 		const fakultas = await FakultasRepository.findAll();
 		if (!fakultas) {
-			throw new APIError(`Waduh, kamu siapa sih? 😭`, 404);
+			throw new APIError(`Waduh, fakultas gak ditemukan, mas! 😭`, 404);
 		}
 		return {
 			response: true,
@@ -17,7 +17,7 @@ export default class FakultasService {
 	public static async get(id: string) {
 		const fakultas = await FakultasRepository.findByID(id);
 		if (!fakultas) {
-			throw new APIError(`Waduh, kamu siapa sih? 😭`, 404);
+			throw new APIError(`Waduh, fakultas gak ditemukan, mas! 😭`, 404);
 		}
 		return {
 			response: true,
@@ -40,7 +40,7 @@ export default class FakultasService {
 				id_akun
 			);
 			if (!fakultas) {
-				throw new APIError(`Waduh, gagal menambahkan data fakultas! 😭`, 404);
+				throw new APIError(`Waduh, gagal menambahkan data fakultas! 😭`, 400);
 			}
 			return {
 				response: true,
@@ -73,7 +73,7 @@ export default class FakultasService {
 				updated_by
 			);
 			if (!fakultas) {
-				throw new APIError(`Waduh, kamu siapa sih? 😭`, 404);
+				throw new APIError(`Waduh, update gagal, mas! 😭`, 400);
 			}
 			return {
 				response: true,
