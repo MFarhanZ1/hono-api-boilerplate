@@ -42,7 +42,7 @@ export default class UniversitasService {
 			}
 			return {
 				response: true,
-				message: "Data universitas berhasil diubah! 😁",
+				message: "Data universitas berhasil dibuat! 😁",
 				data: universitas,
 			};
 		} catch (error) {

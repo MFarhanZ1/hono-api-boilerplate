@@ -44,7 +44,7 @@ export default class FakultasService {
 			}
 			return {
 				response: true,
-				message: "Data fakultas berhasil diubah! 😁",
+				message: "Data fakultas berhasil dibuat! 😁",
 				data: fakultas,
 			};
 		} catch (error) {
