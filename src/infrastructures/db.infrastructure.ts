@@ -1,6 +1,5 @@
-import { Prisma, PrismaClient } from "../generated/prisma";
-import { DefaultArgs } from "../generated/prisma/runtime/library";
+import { PrismaClient } from "@prisma/client";
+import { withAccelerate } from "@prisma/extension-accelerate"
 
-const prisma: PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs> = new PrismaClient();
-
+const prisma = new PrismaClient().$extends(withAccelerate());
 export default prisma;
