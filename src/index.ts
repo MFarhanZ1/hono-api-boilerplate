@@ -4,8 +4,9 @@ import { BlankEnv, BlankSchema } from "hono/types";
 import GlobalHandler from "./handlers/global.handler";
 import globalRoute from "./routes/global.route";
 import LogMiddleware from "./middlewares/log.middleware";
-import fakultasRoute from "./routes/fakultas.route";
 import AuthMiddleware from "./middlewares/auth.middleware";
+import universitasRoute from "./routes/universitas.route";
+import fakultasRoute from "./routes/fakultas.route";
 
 // Init Hono Object and Load environment variables from .env file
 const app: Hono<BlankEnv, BlankSchema, "/"> = new Hono({
@@ -24,6 +25,7 @@ app.onError(GlobalHandler.error);
 // Load all available routes
 app.route("/", globalRoute);
 app.route("/", fakultasRoute);
+app.route("/", universitasRoute);
 
 export default {
   port: APP_PORT || 5000,
